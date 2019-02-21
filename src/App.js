@@ -28,9 +28,11 @@ class App extends Component {
   render() {
     console.log(this.state.clicked);
     return (
-      <div>
-        <h1 className="app_heading">Welcome to Person Greeter!</h1>
-        {this.mapThroughPersonsArray()}
+      <div className="app_heading">
+        <h1 >Welcome to Person Greeter!</h1>
+        <button className="showButton" onClick={this.clickHandler}>Show Persons</button>
+        {this.state.clicked && this.mapThroughPersonsArray()}
+
       </div>
     );
   }
