@@ -16,17 +16,24 @@ class App extends Component {
   };
 
   mapThroughPersonsArray = () => {
-    return this.state.persons.map(person => (
+    return this.state.persons.map((person, index) => (
       <PersonGreeter
         key={person.id}
         person={person}
-        clicked={this.clickHandler}
+        name={person.name}
+        age={person.age}
+        clicked={()=>this.removePersonHandler(index)}
       />
     ));
   };
 
+  removePersonHandler = ( personIndex ) => {
+    const persons = [...this.state.persons];
+    persons.splice( personIndex, 1 );
+    this.setState( { persons: persons } );
+  }
+
   render() {
-    console.log(this.state.clicked);
     return (
       <div className="app_heading">
         <h1 >Welcome to Person Greeter!</h1>
@@ -37,5 +44,6 @@ class App extends Component {
     );
   }
 }
+
 
 export default App;
