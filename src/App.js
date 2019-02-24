@@ -22,28 +22,28 @@ class App extends Component {
         person={person}
         name={person.name}
         age={person.age}
-        clicked={()=>this.removePersonHandler(index)}
+        clicked={() => this.removePersonHandler(index)}
       />
     ));
   };
 
-  removePersonHandler = ( personIndex ) => {
+  removePersonHandler = personIndex => {
     const persons = [...this.state.persons];
-    persons.splice( personIndex, 1 );
-    this.setState( { persons: persons } );
-  }
+    persons.splice(personIndex, 1);
+    this.setState({ persons: persons });
+  };
 
   render() {
     return (
       <div className="app_heading">
-        <h1 >Welcome to Person Greeter!</h1>
-        <button className="showButton" onClick={this.clickHandler}>Show Persons</button>
+        <h1>Welcome to Person Greeter!</h1>
+        <button className="showButton" onClick={this.clickHandler}>
+          Show Persons
+        </button>
         {this.state.clicked && this.mapThroughPersonsArray()}
-
       </div>
     );
   }
 }
-
 
 export default App;
