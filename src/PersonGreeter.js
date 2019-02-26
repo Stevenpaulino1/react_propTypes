@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import PropTypes from "prop-types";
 
 const PersonGreeter = props => {
   return (
@@ -12,6 +13,12 @@ const PersonGreeter = props => {
       </button>
     </div>
   );
+};
+
+PersonGreeter.propTypes = {
+  name: PropTypes.string,
+  age: PropTypes.number,
+  clicked: PropTypes.func
 };
 
 export default PersonGreeter;
