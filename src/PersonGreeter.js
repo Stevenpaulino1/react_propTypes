@@ -3,6 +3,7 @@ import "./App.css";
 import PropTypes from "prop-types";
 
 const PersonGreeter = props => {
+  console.log(PropTypes);
   return (
     <div className="personBorder">
       <h2>
